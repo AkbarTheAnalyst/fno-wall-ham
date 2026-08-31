@@ -6,7 +6,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/Data%20%26%20Figures-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Funding](https://img.shields.io/badge/Funded-SRSP--321-red)](https://neduet.edu.pk)
 [![Status](https://img.shields.io/badge/Status-Under%20Review-yellow)](https://github.com/AkbarTheAnalyst/fno-wall-ham)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22209805.svg)](https://doi.org/10.5281/zenodo.22209805)
 
 > **Sindh Research Project SRSP-321** — NED University of Engineering & Technology, Karachi, Pakistan
 > A two-stage FDM + Fourier Neural Operator framework that assesses five indigenous Sindh wall
@@ -214,6 +214,9 @@ Output: (T̂(x,t), ŵ(x,t)) on the full 65×721 hourly grid
 ---
 
 ## Repository Structure
+> **Note:** `data/sindh_ham_dataset.npz` (558 MB) and the trained operator
+> weights (64 MB) exceed GitHub's file-size limits and are archived in the
+> Zenodo record linked above.
 
 ```
 fno-wall-ham/
@@ -322,7 +325,7 @@ realisations is identified as future work.
                of low-cost indigenous wall materials (30-day NASA POWER forcing)},
   publisher = {Zenodo},
   year      = {2026},
-  doi       = {10.5281/zenodo.XXXXXXX}
+  doi       = {10.5281/zenodo.22209805}
 }
 ```
 
