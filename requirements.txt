@@ -1,0 +1,20 @@
+# Sindh Research Project SRSP-321 -- coupled HAM + neural operator
+# Stage 1 (fdm_solver_ham.ipynb) needs only numpy/scipy/matplotlib.
+# Stage 2 (fno_ham.ipynb) additionally needs torch and SALib.
+#
+# Version floors, not pins: these are the minimum versions the notebooks
+# rely on. numpy>=2.0 provides np.trapezoid; the solver falls back to
+# np.trapz on 1.x, so 1.24 is the true floor.
+
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+
+# --- Stage 2 only -------------------------------------------------------
+torch>=2.0
+SALib>=1.4.7
+
+# --- optional -----------------------------------------------------------
+# Colab provides these already; install only for a local Jupyter session.
+# jupyter>=1.0
+# ipykernel>=6.0

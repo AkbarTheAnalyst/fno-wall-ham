@@ -1,0 +1,4 @@
+data/sindh_ham_dataset.npz
+models/
+.ipynb_checkpoints/
+__pycache__/

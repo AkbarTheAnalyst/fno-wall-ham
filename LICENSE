@@ -1,0 +1,61 @@
+This repository is released under two licences.
+
+--------------------------------------------------------------------------
+SOFTWARE  ..............................................  MIT License
+--------------------------------------------------------------------------
+Applies to all source code, including the Jupyter notebooks in notebooks/,
+any Python scripts, and configuration files.
+
+Copyright (c) 2026 Muhammad Akbar Khan and Fahim Raees
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+DATA AND FIGURES  ...........  Creative Commons Attribution 4.0 (CC BY 4.0)
+--------------------------------------------------------------------------
+Applies to the contents of data/, results/, models/, and assets/ -- that is,
+the generated datasets, the trained operator weights, the tabulated results,
+and all figures.
+
+Copyright (c) 2026 Muhammad Akbar Khan and Fahim Raees
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the licence, and
+indicate if changes were made. The full legal text is at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+A human-readable summary is at:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+
+    Khan, M. A., & Raees, F. (2026). FDM dataset and neural-operator code
+    for hygrothermal assessment of low-cost indigenous wall materials
+    (30-day NASA POWER forcing). Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
+--------------------------------------------------------------------------
+THIRD-PARTY DATA
+--------------------------------------------------------------------------
+data/sukkur_june2025_climate.npz is derived from the NASA Prediction of
+Worldwide Energy Resources (POWER) MERRA-2 hourly product, obtained from
+https://power.larc.nasa.gov. NASA POWER data are freely available and are
+redistributed here for reproducibility. Users should cite NASA POWER
+directly in addition to this repository.

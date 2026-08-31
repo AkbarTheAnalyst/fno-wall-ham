@@ -1,0 +1,20 @@
+pair,Mud brick (unfired) vs Lime-mud composite
+nominal_gap_K,0.2029
+
+property,dJdlnp_Mud brick (unfired),dJdlnp_Lime-mud composite
+k_dry,1.5156,1.7414
+rho,-0.0451,-0.0460
+cp,-0.0451,-0.0460
+alpha_moist,0.2622,0.1185
+delta_p,0.0048,0.0040
+K_ref,0.0000,0.0000
+a_ret,-0.1454,-0.0651
+w_sat,0.2608,0.1172
+
+scenario,sigma_J_K,P_order
+nothing measured (literature ranges),0.6065,0.6310
++ k_dry to +/-5%,0.2192,0.8226
+"+ rho, c_s",0.2189,0.8229
++ alpha(w),0.1815,0.8681
++ sorption isotherm,0.1343,0.9345
++ delta_p and K(w) (full characterisation),0.1343,0.9345
