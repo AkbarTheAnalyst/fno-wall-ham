@@ -1,0 +1,11 @@
+pair,P_FDM64,P_GP64,P_GPall,P_FNO64,P_FNOall
+Lime-stabilised bamboo panel < Clay-straw adobe,0.78125,0.78125,0.77,0.75,0.768
+Lime-stabilised bamboo panel < Mud brick (unfired),0.96875,0.96875,0.914,0.984375,0.91
+Lime-stabilised bamboo panel < Lime-mud composite,0.96875,0.96875,0.96,0.96875,0.962
+Lime-stabilised bamboo panel < Fired clay brick,0.984375,0.984375,0.978,0.984375,0.978
+Clay-straw adobe < Mud brick (unfired),0.890625,0.875,0.77,0.890625,0.766
+Clay-straw adobe < Lime-mud composite,0.859375,0.859375,0.844,0.859375,0.846
+Clay-straw adobe < Fired clay brick,0.953125,0.953125,0.908,0.953125,0.912
+Mud brick (unfired) < Lime-mud composite,0.625,0.625,0.674,0.640625,0.664
+Mud brick (unfired) < Fired clay brick,0.765625,0.75,0.762,0.765625,0.764
+Lime-mud composite < Fired clay brick,0.65625,0.65625,0.642,0.65625,0.648

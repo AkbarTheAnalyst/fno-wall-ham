@@ -1,17 +1,18 @@
-# Selecting Low-Cost Indigenous Wall Materials: A Neural-Operator Hygrothermal Assessment
+# A Fourier Neural Operator Surrogate for Hygrothermal Ranking of Indigenous Wall Materials in Hot-Dry Climates
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-orange?logo=pytorch)](https://pytorch.org)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data%20%26%20Figures-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Funding](https://img.shields.io/badge/Funded-SRSP--321-red)](https://neduet.edu.pk)
-[![Status](https://img.shields.io/badge/Status-Under%20Review-yellow)](https://github.com/AkbarTheAnalyst/fno-wall-ham)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22209805.svg)](https://doi.org/10.5281/zenodo.22209805)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22209804.svg)](https://doi.org/10.5281/zenodo.22209804)
 
 > **Sindh Research Project SRSP-321** — NED University of Engineering & Technology, Karachi, Pakistan
-> A two-stage FDM + Fourier Neural Operator framework that assesses five indigenous Sindh wall
-> materials under coupled heat and moisture transport, and quantifies **how much of the resulting
-> ranking the input data actually support**.
+> A two-stage FDM + Fourier Neural Operator framework that ranks five indigenous Sindh wall
+> materials under coupled heat and moisture transport, quantifies **how much of the resulting
+> ranking the input data actually support**, and benchmarks the operator against three direct
+> scalar surrogates (quadratic ridge, MLP, Gaussian process) to establish precisely where a full
+> field operator adds value over a scalar baseline.
 
 ---
 
@@ -152,6 +153,11 @@ depend on the ordering it was derived from being exact.
 | MAE on J | 0.031 K |
 | MAE on J over the five candidate materials | 0.034 K |
 | Speed-up vs direct FDM (T4 GPU) | 287× single sample, 350× batched |
+| **Scalar baseline — Gaussian process (ARD Matérn) MAE on J** | **0.0061 K (3.0 % of inter-material gap)** |
+| Scalar baseline — MLP 3×256 MAE on J | 0.028 K (13.9 % of gap) |
+| Scalar baseline — Quadratic ridge MAE on J | 0.056 K (27.7 % of gap) |
+| GP vs FNO Sobol' index agreement (max \|diff\| across 13 params) | 0.001 |
+| GP pairwise verdict agreement with FDM | 10/10 pairs |
 
 ### Dynamic cost–performance index
 
@@ -179,7 +185,7 @@ candidate, which would assign it zero benefit by construction.
 **Run order.** Stage 1 top to bottom — every verification is gated by an `assert` and any failure
 stops execution before the sweep. Stage 2 expects `sindh_ham_dataset.npz`,
 `sukkur_june2025_climate.npz` and `ham_uncertainty_mc.csv` from Stage 1; run sections
-1–4, 7, 8, 9, 10, 11, 12, 13 in that order (Section 11 needs `MATERIALS` from Section 8).
+1–4, 6, 7, 8, 10, 13, 14 in that order (Section 14 is the scalar surrogate baseline comparison; if running Section 11 for CPI figures, run Section 8 first as it provides `MATERIALS`).
 
 ### FDM solver (Stage 1)
 
@@ -239,7 +245,11 @@ fno-wall-ham/
 │   ├── window_sensitivity.csv        # coupling shift vs simulation window length
 │   ├── sobol_results_ham.csv         # Sobol' indices with 95 % bootstrap CIs
 │   ├── data_efficiency_ham.csv       # accuracy vs training-set size
-│   └── cpi_results_ham.csv           # dynamic cost–performance index
+│   ├── cpi_results_ham.csv           # dynamic cost–performance index
+│   ├── baseline_accuracy_ham.csv     # scalar surrogate test-set accuracy vs FNO
+│   ├── baseline_data_efficiency_ham.csv  # data efficiency: GP / MLP / ridge vs FNO
+│   ├── baseline_uq_ham.csv           # GP vs FNO decision fidelity on MC sets
+│   └── baseline_sobol_ham.csv        # GP vs FNO Sobol' index comparison
 ├── assets/                           # figures (PDF for LaTeX, PNG for this README)
 ├── requirements.txt
 ├── README.md
@@ -311,21 +321,20 @@ realisations is identified as future work.
 ## Citation
 
 ```bibtex
-@article{akbar2026ham,
-  author  = {Muhammad Akbar Khan and Fahim Raees},
-  title   = {Selecting Low-Cost Indigenous Wall Materials:
-             A Neural-Operator Hygrothermal Assessment},
+@article{fahim2026ham,
+  author  = {Fahim Raees and Muhammad Akbar Khan},
+  title   = {A Fourier Neural Operator Surrogate for Hygrothermal Ranking
+             of Indigenous Wall Materials in Hot-Dry Climates},
   year    = {2026},
-  note    = {Under review. First author ORCID: 0009-0001-7956-0080}
 }
 
-@dataset{akbar2026ham_data,
-  author    = {Muhammad Akbar Khan and Fahim Raees},
-  title     = {FDM dataset and neural-operator code for hygrothermal assessment
-               of low-cost indigenous wall materials (30-day NASA POWER forcing)},
+@dataset{fahim2026ham_data,
+  author    = {Fahim Raees and Muhammad Akbar Khan},
+  title     = {A Fourier Neural Operator Surrogate for Hygrothermal Ranking
+             of Indigenous Wall Materials in Hot-Dry Climates -- Source Code and Data},
   publisher = {Zenodo},
   year      = {2026},
-  doi       = {10.5281/zenodo.22209805}
+  doi       = {10.5281/zenodo.22209804}
 }
 ```
 
