@@ -331,7 +331,7 @@ realisations is identified as future work.
 @dataset{fahim2026ham_data,
   author    = {Fahim Raees and Muhammad Akbar Khan},
   title     = {A Fourier Neural Operator Surrogate for Hygrothermal Ranking
-             of Indigenous Wall Materials in Hot-Dry Climates -- Source Code and Data},
+             of Indigenous Wall Materials in Hot-Dry Climates: Source Code and Data},
   publisher = {Zenodo},
   year      = {2026},
   doi       = {10.5281/zenodo.22209804}
